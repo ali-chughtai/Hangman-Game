@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Hangman</title>
+</head>
+<body>
+    <main>
+    <div class="gameContainer">
+        <div class="leftContainer">
+            <img  data-state="0"  src="https://codingnepalweb.com/demos/build-hangman-game-html-javascript/images/hangman-0.svg" alt="Empty-Stand">
+            <img  data-state="1" src="https://codingnepalweb.com/demos/build-hangman-game-html-javascript/images/hangman-1.svg" alt="Head">
+            <img  data-state="2" src="https://codingnepalweb.com/demos/build-hangman-game-html-javascript/images/hangman-2.svg" alt="Body">
+            <img  data-state="3" src="https://codingnepalweb.com/demos/build-hangman-game-html-javascript/images/hangman-3.svg" alt="Left-arm">
+            <img  data-state="4" src="https://codingnepalweb.com/demos/build-hangman-game-html-javascript/images/hangman-4.svg" alt="Right-arm">
+            <img  data-state="5" src="https://codingnepalweb.com/demos/build-hangman-game-html-javascript/images/hangman-5.svg" alt="Left-leg">
+            <img  data-state="6" src="https://codingnepalweb.com/demos/build-hangman-game-html-javascript/images/hangman-6.svg" alt="Death">
+            <h1>Hangman Game</h1>
+        </div>
+        <div class="rightContainer">
+            <ul id="list">
+                <li class="letter" value="1" ></li>
+                <li class="letter" value="2"></li>
+                <li class="letter" value="3"></li>
+                <li class="letter" value="4"></li>
+                <li class="letter" value="5"></li>
+                <li class="letter" value="6"></li>
+                <li class="letter" value="7"></li>
+                <li class="letter" value="8"></li>
+                <li class="letter" value="9"></li>
+                <li class="letter" value="10"></li>
+                <li class="letter" value="11" ></li>
+                <li class="letter" value="12"></li>
+                <li class="letter" value="13"></li>
+                <li class="letter" value="14"></li>
+                <li class="letter" value="15"></li>
+                <li class="letter" value="16"></li>
+                <li class="letter" value="17"></li>
+                <li class="letter" value="18"></li>
+                <li class="letter" value="19"></li>
+                <li class="letter" value="20"></li>            </ul>
+
+            <p class="questionParagraph" >Hint: <span class="question">Question</span></p>
+            <p class="incorrectParagraph">Incorrect guesses: <span class="incorrect">0</span>/6</p>
+            <div class="keyboard">
+                <button value="a">a</button> 
+                <button value="b">b</button>
+                <button value="c">c</button>
+                <button value="d">d</button>
+                <button value="e">e</button>
+                <button value="f">f</button>
+                <button value="g">g</button>
+                <button value="h">h</button>
+                <button value="i">i</button>
+                <button value="j">j</button>
+                <button value="k">k</button>
+                <button value="l">l</button>
+                <button value="m">m</button>
+                <button value="n">n</button>
+                <button value="o">o</button>
+                <button value="p">p</button>
+                <button value="q">q</button>
+                <button value="r">r</button>
+                <button value="s">s</button>
+                <button value="t">t</button>
+                <button value="u">u</button>
+                <button value="v">v</button>
+                <button value="w">w</button>
+                <button value="x">x</button>
+                <button value="y">y</button>
+                <button value="z">z</button>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="./script.js"></script>
+
+</body>
+</html>

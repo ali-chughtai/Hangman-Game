@@ -1,0 +1,118 @@
+body{
+    background-color:#5E63BA ;
+    padding: 0 1rem;
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+.gameContainer{
+    max-width: 53rem;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    display: flex;
+}
+.gameContainer img{
+    max-width: 100%;
+    display: none;
+}
+img[data-state="0"]{
+    display: block;
+}
+.leftContainer{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 2rem;
+}
+
+.rightContainer{
+    width: 60%;   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center;  */
+    gap: 1rem;
+    padding-right: 2rem;
+}
+.rightContainer ul{
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+.rightContainer .questionParagraph, .incorrectParagraph{
+    align-self: center;
+    font-weight: 600;
+}
+.rightContainer ul li{
+list-style: none;
+border-bottom: 3px solid black;
+flex-basis: 6%;
+padding-bottom: 4%;
+display: none;
+}
+.rightContainer .keyboard{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.3rem;
+}
+.rightContainer button{
+    background-color: #666bca;
+    color: white;
+    /* padding: 0.5rem 1rem; */
+    border-radius: 5px;
+    text-transform: uppercase;
+    border: none;
+    font-size: medium;
+    font-weight: 600;
+    width: 2.6rem;
+    height: 2.3rem;
+}
+.rightContainer .incorrectParagraph .incorrect{
+    color: red;
+}
+
+@media screen and (max-width:770px) {
+    main{
+        display: flex;
+    }
+    .gameContainer{
+        width: 100%;
+        height: 100% !important;
+        max-width: 100%;
+        flex-direction: column;
+        margin: 0;
+        padding: 1rem 0.5rem;
+        gap: 2rem;
+    }
+    .leftContainer, .rightContainer{
+        width: 100%;
+        height: 50% !important;
+        padding: 0;
+        gap: 0rem;
+    }
+    
+    .gameContainer ul {
+        padding: 0;
+    }
+    img{
+        max-width: 50% !important;
+    }
+    .leftContainer h1{
+        display: none;
+    }
+}
+
+
+
