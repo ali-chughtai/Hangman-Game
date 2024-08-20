@@ -8,7 +8,7 @@ const hangmanQuestions = {
     "Pakistan best institute of IT":"fast",
     "Pakistan is controlled by?":"army",
     "Most famous athlete of the world":"ronaldo",
-    "Friday's Special Dish?":"Biryani",
+    "Friday's Special Dish?":"biryani",
     
 }
 
