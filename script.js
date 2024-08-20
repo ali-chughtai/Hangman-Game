@@ -5,6 +5,11 @@ const hangmanQuestions = {
     "A mans bestfriend? ":"bike",
     "Qaidi no?":"804",
     "What does every pakistani student wants rn?":"visa",
+    "Pakistan best institute of IT":"fast",
+    "Pakistan is controlled by?":"army",
+    "Most famous athlete of the world":"ronaldo",
+    "Friday's Special Dish?":"Biryani",
+    
 }
 
 const numberOfQuestions = Object.keys(hangmanQuestions).length;
@@ -12,12 +17,10 @@ var incorrectAnswers = 0; //default
 var combinedAnswers = "";
 const questionNumber = Math.floor(Math.random() * numberOfQuestions);
 
-// Get a random question key
 const randomQuestionKey = Object.keys(hangmanQuestions)[questionNumber];
 const answer = hangmanQuestions[randomQuestionKey];
 const answerLength = answer.length;
 
-// Select the first element with class "question"
 const questionElement = document.getElementsByClassName("question")[0];
 questionElement.innerHTML = randomQuestionKey;
 
@@ -26,22 +29,51 @@ for(var i = 0; i<answerLength ; i++){
     list[i].style.display = "block";
 }
 
-// Select all button elements
 const buttons = document.querySelectorAll(".keyboard button");
-const images = document.querySelectorAll("img")
-// Add event listener to each button
+const images = document.querySelectorAll("img");
+const gameOver =  document.getElementsByClassName("gameOver")[0];
+const gameOver1 =  document.getElementsByClassName("gameOver")[1];
+
+const gameContainer = document.querySelector(".gameContainer");
+
+var array = [];
 buttons.forEach(button => {
     button.addEventListener("click", function () {
+        this.disabled = true;
+        this.style.backgroundColor = "#bdc0ff";
+
         if (answer.includes(this.value)) {
             combinedAnswers += this.value;
-            this.disabled = true;
-            this.style.backgroundColor = "#bdc0ff";
-            alert(combinedAnswers)
-            if(combinedAnswers.length === answerLength){
-                alert ("You won hehe");
-                location.reload();
-
+            for(var i = 0; i<answerLength  ;i++){
+                if(answer[i] === this.value){
+                    array[i] = this.value
+                }
             }
+            for(var i = 0; i<array.length ;i++){
+                if(array[i]){
+                    list[i].innerText = array[i]
+                }
+            }
+
+            // alert(array)
+            // alert(combinedAnswers.length)
+            // alert(answerLength)
+
+            let count = 0;
+            for(var i = 0; i<array.length; i++){
+                if(array[i] !== undefined){
+                    count += 1
+                } 
+            }
+
+            setTimeout(()=>{
+                if(count === answerLength){
+                     gameOver1.style.display = "flex";
+                    gameContainer.style.opacity = "0.5"
+                    document.getElementById("answer1").innerText = answer;
+                }
+            },1000)
+            
         } else {
             incorrectAnswers += 1;
             images.forEach(img => {
@@ -52,10 +84,27 @@ buttons.forEach(button => {
                 }
             });
             document.getElementsByClassName("incorrect")[0].innerText = incorrectAnswers;
-            if (incorrectAnswers === 6){
-                alert("Game Over")
-                location.reload();
-            }
+            
+            setTimeout(()=>{
+                if (incorrectAnswers === 6){
+                    gameOver.style.display = "flex";
+                    gameContainer.style.opacity = "0.5"
+                    document.getElementsByClassName("answer")[0].innerText = answer;
+
+                }
+            },1000)
+            
+            
         }
     });
 });
+
+const playAgain = document.getElementById("playAgain")
+playAgain.addEventListener("click", function () {
+    location.reload();
+})
+
+const playAgain2 = document.getElementById("playAgain2")
+playAgain2.addEventListener("click", function () {
+    location.reload();
+})

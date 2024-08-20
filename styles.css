@@ -6,10 +6,39 @@ body{
 }
 main{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 
+}
+.blurred-background {
+    /* filter: blur(5px); Blur effect */
+    opacity: 0.5; /* Reduce opacity */
+    z-index: -1;
+}
+
+.gameOver{
+    /* max-width: 30rem; */
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items:center;
+    padding: 3rem;
+    background-color: #ffffff;
+    position: absolute;
+    display: none;
+    border-radius: 5px;
+    z-index: 10001;
+    opacity: 1;
+}
+.playAgain{
+    border: none;
+    background-color: #5E63BA;
+    border-radius: 5px;
+    color: white;
+    padding: 0.5rem 1rem;
 }
 .gameContainer{
     max-width: 53rem;
@@ -78,6 +107,9 @@ display: none;
     font-weight: 600;
     width: 2.6rem;
     height: 2.3rem;
+}
+.rightContainer button:hover{
+    cursor: pointer;
 }
 .rightContainer .incorrectParagraph .incorrect{
     color: red;
